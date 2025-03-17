@@ -1,0 +1,2 @@
+使用https://github.com/Skycoder42/QHotkey
+提供的QHotKey
