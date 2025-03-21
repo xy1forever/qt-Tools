@@ -1,0 +1,22 @@
+需要用到
+QSystemTrayIcon
+QMenu
+QIcon
+QCloseEvent
+
+首先，使用QSystemTrayIcon创建托盘对象，需要为其设置图标用到setIcon
+其次，创建QAction实例，将其的&QAction::triggered 信号与槽函数对应，此处可灵活多变，为该项目的功能服务，也可用基本功能如&Widget::hide等
+最后，创建menu实例，并使用addAction将QAction实例添加入菜单，再setContextMenu将菜单设置为QSystemTrayIcon的，show，结束。
+
+菜单只是在对隐藏的图标右键有效，若是左键，可用其信号 void activated(QSystemTrayIcon::ActivationReason reason)
+写单独的槽函数处理如下信息
+QSystemTrayIcon::Unknown0Unknown reason
+QSystemTrayIcon::Context1The context menu for the system tray entry was requested
+QSystemTrayIcon::DoubleClick2The system tray entry was double clicked.
+
+补充：menu中可加入menu，实现menu的嵌套。
+QAction *addMenu(QMenu *menu)
+
+更多细节全在qt帮助文档中。
+
+

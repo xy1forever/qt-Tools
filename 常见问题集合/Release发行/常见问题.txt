@@ -1,0 +1,12 @@
+在发行WOF_Screens项目时遇到的问题：
+1.Warning: Cannot find Visual Studio installation directory, VCINSTALLDIR is not set.
+问题原因：
+解决方法：检索Developer Command Prompt for VS 2022并打开
+		  键入echo %VCINSTALLDIR%查看是否存在有效路径
+		  如果存在，在当前命令行中进入release的exe所在目录
+		  键入C:\Qt\6.8.2\mingw_64\bin\windeployqt6.exe --force .\Scr_Shot_Project.exe
+
+2.Warning: Cannot find any version of the dxcompiler.dll and dxil.dll.
+问题原因：
+解决方法：查明项目是用什么构建的，再选择mscv或是mingw的windeployqt6
+

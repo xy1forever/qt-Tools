@@ -1,0 +1,4 @@
+1.在qt creator中构建release版本
+2.在项目build中的release找到exe
+3.使用qt自带的windeployqt6.exe，检索并添加需要的dll等文件（如C:\Qt\6.8.2\mingw_64\bin\windeployqt6.exe）
+4.双击exe测试是否能用、是否有bug
